@@ -63,7 +63,7 @@ const renderActiveShape = (props: any) => {
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-        <div className="bg-white border p-2">{payload[0].value} US$ Millones</div>
+        <div className="bg-white border p-2">{payload[0].value} US$ Millions</div>
     );
   }
   return null;
