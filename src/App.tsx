@@ -98,10 +98,10 @@ const Chart = () => {
   const angles = data.map((entry) => (entry.value / totalValue) * maxAngle);
 
   return (
-      <div className="flex flex-col items-center justify-center h-screen">
-
+      <div className="w-full max-w-xs md:max-w-md lg:max-w-lg mx-auto p-4">
+          <ResponsiveContainer width="100%" height={400}>
           <PieChart width={400} height={400}>
-              {/* Primer anillo */}
+
               <Pie
                   data={[data[0]]}
                   cx="50%"
@@ -125,7 +125,7 @@ const Chart = () => {
                   dataKey="value"
               />
 
-              {/* Segundo anillo */}
+
               <Pie
                   data={[data[1]]}
                   cx="50%"
@@ -149,7 +149,7 @@ const Chart = () => {
                   dataKey="value"
               />
 
-              {/* Tercer anillo */}
+
               <Pie
                   data={[data[2]]}
                   cx="50%"
@@ -174,8 +174,8 @@ const Chart = () => {
               />
 
               <text
-                  x={200}
-                  y={180}
+                  x="50%"
+                  y="45%"
                   dominantBaseline="middle"
                   textAnchor="middle"
                   fill="#333"
@@ -186,10 +186,11 @@ const Chart = () => {
 
 
 
-              {/* Leyenda y Tooltip */}
+
               <Legend content={<CustomLegend />} />
               <Tooltip content={<CustomTooltip />} />
           </PieChart>
+          </ResponsiveContainer>
 
 
 
